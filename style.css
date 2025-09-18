@@ -1,0 +1,63 @@
+/* =========================
+   Estilos personalizados
+   ========================= */
+
+body {
+  background-color: #ceb570;
+}
+/*===========GRID 1-2-3 COLS PARA CUALQUIER SECCIÓN --------*/
+.responsive-grid {
+display: grid;
+gap: 1rem;
+grid-template-columns: 1fr;  /*--- ==recuerda que este es el responsiv*/
+}
+@media (min-width: 768px) {
+.responsive-grid {grid-template-columns: repeat(2, 1fr); } /* tablet */ 
+}
+@media (min-width: 992px) {
+.responsive-grid { grid-template-columns: repeat (3, 1fr); } /* Computadora de escrit*/
+}
+/* Ajustes del carrusel */
+.carousel-inner img {
+  object-fit: cover;
+  height: 450px;
+}
+
+/* Navbar fijo */
+.navbar-brand img {
+  border-radius: 50%;
+  border: 2px solid rgb(245, 155, 76);
+}
+/* Centrar el recorte de las imágenes del carrusel */
+.carousel-inner img {
+  object-position: center;
+}
+
+/* Altura del carrusel responsiva */
+@media (max-width: 768px) {
+  .carousel-inner img { height: 320px; }
+}
+@media (max-width: 480px) {
+  .carousel-inner img { height: 240px; }
+}
+
+/* Respetar usuarios con “reducir movimiento” */
+@media (prefers-reduced-motion: reduce) {
+  .navbar-brand img,
+  .logo-click {
+    transition: none;
+  }
+}
+
+/* Asegurar contraste del botón primario */
+.btn-primary {
+  color: #fadddd;
+}
+
+/* ================= OFFCANVAS ================= */
+/* Ancho del offcanvas en pantallas ≥992px */
+@media (min-width: 992px) {
+  #offcanvasRight.offcanvas-end {
+    width: 420px;
+  }
+}
